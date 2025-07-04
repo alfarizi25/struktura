@@ -1,0 +1,484 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 84% 4.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Smooth animations */
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🟡 KUNING KONSTRUKSI - Warna Aksen Utama */
+.text-blue-accent {
+  color: #f59e0b;
+}
+
+.bg-blue-accent {
+  background-color: #f59e0b;
+}
+
+.border-blue-accent {
+  border-color: #f59e0b;
+}
+
+.text-blue-dark {
+  color: #d97706;
+}
+
+.bg-blue-dark {
+  background-color: #d97706;
+}
+
+.border-blue-dark {
+  border-color: #d97706;
+}
+
+/* Hover states untuk kuning konstruksi */
+.hover\:bg-blue-accent:hover {
+  background-color: #f59e0b;
+}
+
+.hover\:text-blue-accent:hover {
+  color: #f59e0b;
+}
+
+.hover\:bg-blue-dark:hover {
+  background-color: #d97706;
+}
+
+/* Focus states untuk form elements */
+.focus\:border-blue-accent:focus {
+  border-color: #f59e0b;
+}
+
+.focus\:ring-blue-accent:focus {
+  --tw-ring-color: #f59e0b;
+}
+
+/* Tambahan warna kuning untuk variasi */
+.text-yellow-light {
+  color: #fbbf24;
+}
+
+.bg-yellow-light {
+  background-color: #fbbf24;
+}
+
+.border-yellow-light {
+  border-color: #fbbf24;
+}
+
+.text-yellow-construction {
+  color: #f59e0b;
+}
+
+.bg-yellow-construction {
+  background-color: #f59e0b;
+}
+
+.border-yellow-construction {
+  border-color: #f59e0b;
+}
+
+/* Button styles dengan kuning konstruksi */
+.btn-yellow {
+  background-color: #f59e0b;
+  color: white;
+  border: 1px solid #f59e0b;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-yellow:hover {
+  background-color: #d97706;
+  border-color: #d97706;
+}
+
+.btn-yellow-outline {
+  background-color: transparent;
+  color: #f59e0b;
+  border: 1px solid #f59e0b;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-yellow-outline:hover {
+  background-color: #f59e0b;
+  color: white;
+}
+
+/* Shadow effects dengan kuning */
+.shadow-yellow {
+  box-shadow: 0 4px 14px 0 rgba(245, 158, 11, 0.15);
+}
+
+.shadow-yellow-lg {
+  box-shadow: 0 10px 25px -3px rgba(245, 158, 11, 0.2), 0 4px 6px -2px rgba(245, 158, 11, 0.1);
+}
+
+/* Loading spinner dengan kuning */
+.spinner-yellow {
+  border-color: #fef3c7;
+  border-top-color: #f59e0b;
+}
+
+/* Badge dengan kuning konstruksi */
+.badge-yellow {
+  background-color: #f59e0b;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-yellow-light {
+  background-color: #fef3c7;
+  color: #92400e;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Link styles */
+.link-yellow {
+  color: #f59e0b;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.link-yellow:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+/* Form input focus dengan kuning */
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: #f59e0b;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.1);
+}
+
+/* Card hover effects */
+.card-hover:hover {
+  box-shadow: 0 10px 25px -3px rgba(245, 158, 11, 0.2);
+  transform: translateY(-2px);
+  transition: all 0.3s ease-in-out;
+}
+
+/* Progress bar dengan kuning */
+.progress-yellow {
+  background-color: #f59e0b;
+}
+
+.progress-bg-yellow {
+  background-color: #fef3c7;
+}
+
+/* Alert dengan tema kuning */
+.alert-yellow {
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* Selection colors */
+::selection {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Scrollbar dengan tema kuning */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3f4f6;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #f59e0b;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #d97706;
+}
+
+/* Table hover dengan kuning */
+.table-hover:hover {
+  background-color: #fef3c7;
+}
+
+/* Tab active state */
+.tab-active {
+  border-bottom: 2px solid #f59e0b;
+  color: #f59e0b;
+}
+
+/* Dropdown hover */
+.dropdown-item:hover {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Tooltip dengan kuning */
+.tooltip-yellow {
+  background-color: #f59e0b;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-yellow {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+}
+
+.bg-gradient-yellow-light {
+  background: linear-gradient(135deg, #fef3c7 0%, #fbbf24 100%);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .glass-card {
+    backdrop-filter: blur(10px);
+  }
+
+  .glass-nav {
+    backdrop-filter: blur(15px);
+  }
+}
+
+/* Print styles */
+@media print {
+  .text-blue-accent {
+    color: #92400e !important;
+  }
+
+  .bg-blue-accent {
+    background-color: #fef3c7 !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .text-blue-accent {
+    color: #92400e;
+  }
+
+  .bg-blue-accent {
+    background-color: #f59e0b;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in,
+  .animate-slide-up,
+  .card-hover:hover {
+    animation: none;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Dark mode support (jika diperlukan nanti) */
+@media (prefers-color-scheme: dark) {
+  .glass {
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .glass-card {
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.3);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Accessibility improvements */
+.focus-visible:focus {
+  outline: 2px solid #f59e0b;
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #f59e0b;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Loading states */
+.loading-yellow {
+  background: linear-gradient(90deg, #fef3c7 25%, #fbbf24 50%, #fef3c7 75%);
+  background-size: 200% 100%;
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error states */
+.error-yellow {
+  background-color: #fef2f2;
+  border: 1px solid #fca5a5;
+  color: #dc2626;
+}
+
+/* Success states */
+.success-yellow {
+  background-color: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #16a34a;
+}
+
+/* Warning states */
+.warning-yellow {
+  background-color: #fefce8;
+  border: 1px solid #facc15;
+  color: #ca8a04;
+}
+
+/* Info states */
+.info-yellow {
+  background-color: #fef3c7;
+  border: 1px solid #f59e0b;
+  color: #92400e;
+}
+
